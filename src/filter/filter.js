@@ -5,26 +5,27 @@ import './filter.css'
 
 class Filter extends React.Component {
    render() {
+     const classes = this.props;
     return (
-      <div className={this.props.container}>
+      <div className={classes.container}>
         <div className="filter">
           <Input
             defaultValue="Hello world"
-            className={this.props.input}
+            className={classes.input}
             inputProps={{
               'aria-label': 'Description',
             }}
           />
           <Input
             placeholder="Placeholder"
-            className={this.props.input}
+            className={classes.input}
             inputProps={{
               'aria-label': 'Description',
             }}
           />
           <Input
             value="Disabled"
-            className={this.props.input}
+            className={classes.input}
             disabled
             inputProps={{
               'aria-label': 'Description',
@@ -32,7 +33,7 @@ class Filter extends React.Component {
           />
           <Input
             defaultValue="Error"
-            className={this.props.input}
+            className={classes.input}
             error
             inputProps={{
               'aria-label': 'Description',
