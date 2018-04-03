@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 64px;
+  z-index: 99;
+  header {
+    background: rgba(0,0,0,0.5);
+  }
+  &__logo {
+    font-size: 24px;
+    color: white;
+    display: flex;
+    align-items: center;
+    .logo {
+      animation: App-logo-spin infinite 20s linear;
+      height: 40px;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import Header from './header/header.js';
-import './App.css';
+import Filter from './filter/filter.js'
+import Container from './container/container.js'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
-
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Filter />
+        <Container />
       </div>
     );
   }

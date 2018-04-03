@@ -1,25 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {withStyles} from 'material-ui/styles';
 import logo from './../logo.svg';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-};
+import './headers.css';
 
-function Header(props) {
-  const {classes} = props;
+
+
+function Header() {
   return (
-    <div className={classes.root}>
+    <div className='header'>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Hotel in Ukraine<img src={logo} className="App-logo" alt="logo"/>
+          <Typography variant="title" color="inherit" className='header__logo'>
+            Hotel in Ukraine<img src={logo} className="logo" alt="logo"/>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -27,8 +22,5 @@ function Header(props) {
   );
 }
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(Header);
+export default Header;
