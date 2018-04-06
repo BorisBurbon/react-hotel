@@ -1,29 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+// import './ducks/index';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+
+// const store = createStore(hotelList, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+
+ReactDOM.render(
+  // <Provider store={store}>
+    <App />,
+   // </Provider>,
+  document.getElementById('root')
+);
 registerServiceWorker();
-
-
-
-// Test Redux
-
-
-// function Hotel(state = [], action) {
-//   if(action.type === "Add_hotel"){
-//     return [...state, action.payload]
-//   }
-//   return state;
-// }
-// const store = createStore(Hotel);
-//
-// store.subscribe(() => {
-//   console.log('subscribe', store.getState())
-// });
-//
-// store.dispatch({type: "Add_hotel", payload: 'hotel1'});
-// store.dispatch({type: "Add_hotel", payload: 'hotel2'});
