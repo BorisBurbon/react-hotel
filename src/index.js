@@ -7,18 +7,14 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import reducer from './reducers';
+import { getHotel } from './actions/hotel';
 import registerServiceWorker from './registerServiceWorker';
-
 
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
-store.subscribe(() => {
-  console.log('subscribe', store.getState());
-});
 
-store.dispatch({type: "ADD__HOTEL", payload: 'Smlls like'});
-
+//store.dispatch(getHotel());
 
 ReactDOM.render(
   <Provider store={store}>
@@ -26,4 +22,4 @@ ReactDOM.render(
    </Provider>,
   document.getElementById('root')
 );
-// registerServiceWorker();
+registerServiceWorker();
