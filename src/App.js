@@ -6,7 +6,10 @@ import  {getHotel}  from './actions/hotel';
 import  './container.css'
 
 class App extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = null;
+  }
 
   componentDidMount() {
     this.props.getHotel();
@@ -37,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Filter />
+        <Filter items={hotelBlock}/>
         <div className="content">
           {hotelBlock}
         </div>
