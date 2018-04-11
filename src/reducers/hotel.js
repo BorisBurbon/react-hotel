@@ -8,7 +8,7 @@ export default (state = hotelList, {type, payload}) => {
     case GET_HOTEL:
       return Object.assign([], state, payload)
     case GET_SEARCH_HOTEL:
-      return Object.assign([], state, payload)
+      return Object.assign([], payload)
     default:
       return state
   }

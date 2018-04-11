@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Filter/>
+        <Filter items={hotelBlock}/>
         <div className="content">
           {hotelBlock}
         </div>

@@ -1,27 +1,39 @@
 import React from 'react';
 import Input from 'material-ui/Input';
+import {connect} from 'react-redux';
 import Select from 'material-ui/Select';
 import {InputLabel} from 'material-ui/Input';
 import {MenuItem} from 'material-ui/Menu';
 import {FormControl} from 'material-ui/Form';
 import Button from 'material-ui/Button';
+import TextField from 'material-ui/TextField';
+import  {getSearchHotel}  from '../actions/hotel';
+import moment from 'moment';
+
 import './filter.css'
 
 
+
 class Filter extends React.Component {
-  // state = {
-  //   city: '',
-  //   open: false,
-  // };
+
   constructor(props) {
     super(props);
+    let now = moment().format('YYYY-MM-DD');
     this.state = {
       city: '',
-      open: false,
-    }
+      checkIn: now,
+      checkOut: now,
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
-
   handleChange = event => {
+    this.setState({[event.target.name]: event.target.value});
+  };
+
+  handleChangeDate = event => {
+    this.setState({[event.target.name]: event.target.value});
+  };
+  handleChangeDateOut= event => {
     this.setState({[event.target.name]: event.target.value});
   };
 
@@ -34,7 +46,15 @@ class Filter extends React.Component {
   };
 
   filterSubmit = () => {
-    console.log('form submited', this.state.city);
+    console.log('form submited', this.state);
+    getSearchHotel(this.state);
+    const payload = {
+      city: this.state.city,
+      checkIn: this.state.checkIn,
+      checkOut: this.state.checkOut,
+    };
+    this.props.getSearchHotel(payload);
+
   };
 
   render() {
@@ -65,26 +85,36 @@ class Filter extends React.Component {
               <MenuItem value='IEV'>Kiev Airport</MenuItem>
               <MenuItem value='VSG'>Luhansk Airport</MenuItem>
               <MenuItem value='KGO'>Kropyvnytskyi Airport</MenuItem>
+              <MenuItem value='BOM'>Mumbai</MenuItem>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="2">Filtel input 2</InputLabel>
-            <Input
-              className={classes.input}
-              inputProps={{
-                'aria-label': 'Description',
-                id: '2',
+            <TextField
+              id="date"
+              label="Date begin"
+              type="date"
+              defaultValue={this.state.dataStart}
+              value={this.state.dataStart}
+              className={classes.textField}
+              name="checkIn"
+              onChange={this.handleChangeDate}
+              InputLabelProps={{
+                shrink: true,
               }}
             />
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="3">Filtel input 3</InputLabel>
-            <Input
-              placeholder="Placeholder"
-              className={classes.input}
-              inputProps={{
-                'aria-label': 'Description',
-                id: '3'
+            <TextField
+              id="date-end"
+              label="Date Out"
+              type="date"
+              defaultValue={this.state.dataOut}
+              value={this.state.dataOut}
+              className={classes.dataOut}
+              name="checkOut"
+              onChange={this.handleChangeDateOut}
+              InputLabelProps={{
+                shrink: true,
               }}
             />
           </FormControl>
@@ -121,4 +151,16 @@ class Filter extends React.Component {
   }
 }
 
-export default Filter;
+
+const mapStateToProps = (state) => {
+  return {
+    hotel: state.hotel
+  }
+}
+
+
+const mapDispatchToProps = {
+  getSearchHotel
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter)

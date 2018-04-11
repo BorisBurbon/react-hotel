@@ -4,8 +4,9 @@ import { GET_HOTEL, GET_SEARCH_HOTEL } from '../constants';
 
 const API = 'https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=IPPEfSrgZ8gPIIvDAvvgeAA429ipXkZl&';
 
-export const getHotel = () => dispatch => {
-  let query = 'location=IEV&check_in=2018-06-15&check_out=2018-06-19';
+export const getHotel = (data) => dispatch => {
+  let city = 'BOM';
+  let query = `location=${city}&check_in=2018-05-15&check_out=2018-05-25`;
   axios.get(`${API}${query}`)
     .then((response) => {
       dispatch({
@@ -18,8 +19,12 @@ export const getHotel = () => dispatch => {
     })
 };
 
-export const getSearchHotel = () => dispatch => {
-  let query = 'location=IEV&check_in=2018-06-15&check_out=2018-06-19';
+export const getSearchHotel = (data) => dispatch => {
+  let city = data.city;
+  let checkIn = data.checkIn;
+  let checkOut = data.checkOut;
+  console.log(data)
+  let query = `location=${city}&check_in=${checkIn}&check_out=${checkOut}`;
   axios.get(`${API}${query}`)
     .then((response) => {
       dispatch({
