@@ -118,28 +118,18 @@ class Filter extends React.Component {
               }}
             />
           </FormControl>
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="4">Filtel input 4</InputLabel>
-            <Input
-              placeholder="Placeholder"
-              className={classes.input}
-              inputProps={{
-                'aria-label': 'Description',
-                id: '4'
-              }}
-            />
-          </FormControl>
-          <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="5">Filtel input 5</InputLabel>
-            <Input
-              placeholder="Placeholder"
-              className={classes.input}
-              inputProps={{
-                'aria-label': 'Description',
-                id: '5'
-              }}
-            />
-          </FormControl>
+          {/*<FormControl className={classes.formControl}>*/}
+            {/*<InputLabel htmlFor="4">Filtel input 4</InputLabel>*/}
+            {/*<Input*/}
+              {/*placeholder="Placeholder"*/}
+              {/*className={classes.input}*/}
+              {/*inputProps={{*/}
+                {/*'aria-label': 'Description',*/}
+                {/*id: '4'*/}
+              {/*}}*/}
+            {/*/>*/}
+          {/*</FormControl>*/}
+
           <FormControl className={classes.formControl}>
             <Button variant="raised" className="filter-btn" onClick={this.filterSubmit}>
               Send
