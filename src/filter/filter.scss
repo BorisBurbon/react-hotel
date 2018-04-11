@@ -1,7 +1,9 @@
 .filter {
   min-height: 450px;
   padding: 80px 24px;
-  background: url("../img/filter-bg.jpg") no-repeat center;
+  position: relative;
+  overflow: hidden;
+  background: transparent url(../img/filter-bg0.jpg) repeat top left;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -9,6 +11,129 @@
   flex-wrap: wrap;
   &>div {
     margin: 15px;
+    label {
+      font-size: 20px;
+      color: #100d0e;
+    }
+    input {
+      color: #100d0e;
+      font-size: 18px;
+    }
+    .filter-select {
+      min-width: 200px;
+      font-size: 18px;
+    }
+    .filter-btn {
+      display: inline-block;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 35px;
+      min-width: 180px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      text-transform: uppercase;
+      margin-top: 35px;
+      transition: all 0.2s ease-out;
+      &:hover {
+        background: rgba(0,0,0,0.9);
+        cursor: pointer;
+      }
+    }
   }
-;
+
+  .cb-slideshow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style-type: none;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      list-style-type: none;
+      background: rgba(142, 47, 47, 0.4);
+    }
+    li {
+      span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: transparent;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: none;
+        opacity: 0;
+        z-index: 0;
+        -webkit-backface-visibility: hidden;
+        animation: imageAnimation 26s linear 1;
+      }
+      &:nth-child(1) {
+        span {
+          background-image: url(../img/filter-bg.jpg);
+          animation-delay: 1s;
+        }
+      }
+      &:nth-child(2) span {
+        background-image: url(../img/filter-bg2.jpg);
+        animation-delay: 8s;
+      }
+      &:nth-child(3) span {
+        background-image: url(../img/filter-bg3.jpg);
+        animation-delay: 17s;
+      }
+    }
+  }
+}
+
+/* Animation for the slideshow images */
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+  14% {
+    opacity: 0.6;
+    transform: scale(1.05);
+    animation-timing-function: linear;
+  }
+  28% {
+    opacity: 0.85;
+    transform: scale(1.1);
+    animation-timing-function: linear;
+  }
+  42% {
+    opacity: 1;
+    transform: scale(1.15);
+    animation-timing-function: linear;
+  }
+  56% {
+    opacity: 1;
+    transform: scale(1.2);
+    animation-timing-function: linear;
+  }
+  70% {
+    opacity: 0.6;
+    transform: scale(1.25);
+    animation-timing-function: linear;
+  }
+  84% {
+    opacity: 0.3;
+    transform: scale(1.2);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    animation-timing-function: linear;
+  }
+
 }

@@ -3,13 +3,10 @@ import {connect} from 'react-redux';
 import Header from './header/header.js';
 import Filter from './filter/filter.js'
 import  {getHotel}  from './actions/hotel';
+
 import  './container.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = null;
-  }
 
   componentDidMount() {
     this.props.getHotel();
@@ -40,7 +37,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Filter items={hotelBlock}/>
+        <Filter/>
         <div className="content">
           {hotelBlock}
         </div>

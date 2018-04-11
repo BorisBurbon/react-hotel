@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import reducer from './reducers';
-import { getHotel } from './actions/hotel';
 import registerServiceWorker from './registerServiceWorker';
 
 
