@@ -8,6 +8,11 @@
   z-index: 99; }
   .header header {
     background: rgba(0, 0, 0, 0.5); }
+  .header .logo-link {
+    color: white;
+    text-decoration: none; }
+    .header .logo-link:hover {
+      opacity: 0.7; }
   .header__logo {
     font-size: 24px;
     color: white;

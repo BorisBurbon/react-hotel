@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import  {getHotel}  from '../actions/hotel';
+import { Link } from 'react-router-dom';
 
 import  './listhotel.css'
 
@@ -15,17 +16,14 @@ class ListHotel extends Component {
 
     const hotelBlock = this.props.hotel.map((data, i) => {
       return (<div key={i} className="hotel__block">
-        <div className="hotel-content">
+        <Link to={`/about-hotel/${i}`} className="hotel-content">
           <img src="https://www.yana.kiev.ua/img/hotels/569/big/5731/1062507404.jpg" alt=""/>
           <h4 className='hotel-content__title'>
             {data.property_name}
           </h4>
           <p className="hotel-content__text">{data.total_price.amount}$</p>
-          <p>{data.address.line1}</p>
-          <p>tel: {data.contacts[0].detail}</p>
-
-          <button className="btn hotel-content__btn">Reservation</button>
-        </div>
+          <p>Go to hotel page</p>
+        </Link>
       </div>)
     });
 

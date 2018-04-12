@@ -4,23 +4,30 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import {syncHistoryWithStore} from 'react-router-redux';
-import {Router, Route, browserHistory} from 'react-router';
+import { BrowserRouter as Router, Link, Route} from 'react-router-dom';
 
 import App from './App';
+import AboutHotel from './listhotel/AboutHotel';
 import reducer from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+// const history = syncHistoryWithStore(browserHistory , store);
 
 
-//store.dispatch(getHotel());
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+
+      <Router>
+        <div>
+          <Route exact  path="/" component={App} />
+          <Route path="/about-hotel" component={AboutHotel} />
+        </div>
+      </Router>
+
    </Provider>,
   document.getElementById('root')
 );
