@@ -1,5 +1,5 @@
 .filter {
-  min-height: 450px;
+  height: 450px;
   padding: 80px 24px;
   position: relative;
   overflow: hidden;
@@ -26,7 +26,7 @@
       border-radius: 2px;
       padding: 10px 35px;
       min-width: 180px;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.4);
       color: #fff;
       text-transform: uppercase;
       margin-top: 35px;
@@ -34,6 +34,40 @@
       .filter > div .filter-btn:hover {
         background: rgba(0, 0, 0, 0.9);
         cursor: pointer; }
+  .filter .date-picker-select {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 9px 5px;
+    border: none;
+    margin-top: 34px;
+    border-radius: 2px;
+    outline: none; }
+  .filter .date-picker-label label {
+    font-size: 16px;
+    top: auto;
+    bottom: 40px;
+    transform: none !important; }
+  .filter .react-datepicker {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.7); }
+    .filter .react-datepicker__header {
+      background: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.7); }
+    .filter .react-datepicker__navigation--previous {
+      border-right-color: #000; }
+    .filter .react-datepicker__navigation--next {
+      border-left-color: #000; }
+    .filter .react-datepicker__day:hover {
+      background: rgba(0, 0, 0, 0.3) !important;
+      color: #bd5e3b; }
+    .filter .react-datepicker__day--selected {
+      background: rgba(0, 0, 0, 0.7);
+      color: #A55031; }
+  .filter .react-datepicker-popper[data-placement^="bottom"]
+.react-datepicker__triangle,
+  .filter .react-datepicker-popper[data-placement^="bottom"]
+.react-datepicker__triangle::before {
+    border-top: none;
+    border-bottom-color: rgba(0, 0, 0, 0.7); }
   .filter .cb-slideshow {
     position: absolute;
     width: 100%;
@@ -109,3 +143,6 @@
   100% {
     opacity: 0;
     animation-timing-function: linear; } }
+
+.MuiPaper-root-9 {
+  background: rgba(0, 0, 0, 0.9); }

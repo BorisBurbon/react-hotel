@@ -6,36 +6,46 @@ import {InputLabel} from 'material-ui/Input';
 import {MenuItem} from 'material-ui/Menu';
 import {FormControl} from 'material-ui/Form';
 import Button from 'material-ui/Button';
-import TextField from 'material-ui/TextField';
 import  {getSearchHotel}  from '../actions/hotel';
 import moment from 'moment';
+import DatePicker from 'react-datepicker';
 
 import './filter.css'
-
+import 'react-datepicker/dist/react-datepicker.css';
 
 
 class Filter extends React.Component {
 
   constructor(props) {
     super(props);
-    let now = moment().format('YYYY-MM-DD');
-    this.state = {
+    this.state = ({
       city: '',
-      checkIn: now,
-      checkOut: now,
-    };
+      checkIn: moment(),
+      checkOut: moment(),
+    });
     this.handleChange = this.handleChange.bind(this);
+    this.handleChangeDateOut = this.handleChangeDateOut.bind(this);
+    this.handleChangeDate = this.handleChangeDate.bind(this);
   }
+
+
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
   };
 
-  handleChangeDate = event => {
-    this.setState({[event.target.name]: event.target.value});
-  };
-  handleChangeDateOut= event => {
-    this.setState({[event.target.name]: event.target.value});
-  };
+
+  handleChangeDate(date) {
+    this.setState({
+      checkIn: date
+    });
+  }
+
+  handleChangeDateOut(date) {
+    this.setState({
+      checkOut: date
+    });
+  }
+
 
   handleClose = () => {
     this.setState({open: false});
@@ -47,11 +57,11 @@ class Filter extends React.Component {
 
   filterSubmit = () => {
     console.log('form submited', this.state);
-    getSearchHotel(this.state);
+
     const payload = {
       city: this.state.city,
-      checkIn: this.state.checkIn,
-      checkOut: this.state.checkOut,
+      checkIn: this.state.checkIn.format('YYYY-MM-DD'),
+      checkOut: this.state.checkOut.format('YYYY-MM-DD'),
     };
     this.props.getSearchHotel(payload);
 
@@ -67,7 +77,7 @@ class Filter extends React.Component {
             <li><span>Image 02</span></li>
             <li><span>Image 03</span></li>
           </ul>
-          <FormControl className={classes.formControl}>
+          <FormControl className='city-select-block'>
             <InputLabel htmlFor="controlled-open-select">City</InputLabel>
             <Select
               open={this.state.open}
@@ -87,47 +97,34 @@ class Filter extends React.Component {
               <MenuItem value='KGO'>Kropyvnytskyi Airport</MenuItem>
               <MenuItem value='BOM'>Mumbai</MenuItem>
             </Select>
-          </FormControl>
-          <FormControl className={classes.formControl}>
-            <TextField
-              id="date"
-              label="Date begin"
-              type="date"
-              defaultValue={this.state.dataStart}
-              value={this.state.dataStart}
-              className={classes.textField}
-              name="checkIn"
+          </FormControl >
+          <FormControl className='date-picker-label'>
+            <InputLabel htmlFor="controlled-open-select">Date In</InputLabel>
+            <DatePicker
+              className="date-picker-select"
+              selected={this.state.checkIn}
               onChange={this.handleChangeDate}
-              InputLabelProps={{
-                shrink: true,
-              }}
             />
           </FormControl>
-          <FormControl className={classes.formControl}>
-            <TextField
-              id="date-end"
-              label="Date Out"
-              type="date"
-              defaultValue={this.state.dataOut}
-              value={this.state.dataOut}
-              className={classes.dataOut}
-              name="checkOut"
+
+          <FormControl className='date-picker-label'>
+            <InputLabel htmlFor="controlled-open-select">Date Out</InputLabel>
+            <DatePicker
+              className="date-picker-select"
+              selected={this.state.checkOut}
               onChange={this.handleChangeDateOut}
-              InputLabelProps={{
-                shrink: true,
-              }}
             />
           </FormControl>
           {/*<FormControl className={classes.formControl}>*/}
-            {/*<InputLabel htmlFor="4">Filtel input 4</InputLabel>*/}
-            {/*<Input*/}
-              {/*placeholder="Placeholder"*/}
-              {/*className={classes.input}*/}
-              {/*inputProps={{*/}
-                {/*'aria-label': 'Description',*/}
-                {/*id: '4'*/}
-              {/*}}*/}
-            {/*/>*/}
+          {/*<InputLabel htmlFor="4">Filtel input 4</InputLabel>*/}
+          {/*<Input*/}
+          {/*placeholder="Placeholder"*/}
+          {/*className={classes.input}*/}
+          {/*inputProps={{*/}
+          {/*'aria-label': 'Description',*/}
+          {/*id: '4'*/}
+          {/*}}*/}
+          {/*/>*/}
           {/*</FormControl>*/}
 
           <FormControl className={classes.formControl}>
