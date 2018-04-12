@@ -118,4 +118,8 @@
       background: rgba(142, 47, 47, 0.4);
     }
   }
+  &__container {
+    max-width: 1200px;
+    padding: 40px 24px;
+  }
 }

@@ -24,7 +24,7 @@ ReactDOM.render(
       <Router>
         <div>
           <Route exact  path="/" component={App} />
-          <Route path="/about-hotel" component={AboutHotel} />
+          <Route path="/about-hotel/:id" component={AboutHotel} />
         </div>
       </Router>
 

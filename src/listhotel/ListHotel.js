@@ -16,7 +16,7 @@ class ListHotel extends Component {
 
     const hotelBlock = this.props.hotel.map((data, i) => {
       return (<div key={i} className="hotel__block">
-        <Link to={`/about-hotel/${i}`} className="hotel-content">
+        <Link to={`/about-hotel/${data.property_code}`} className="hotel-content">
           <img src="https://www.yana.kiev.ua/img/hotels/569/big/5731/1062507404.jpg" alt=""/>
           <h4 className='hotel-content__title'>
             {data.property_name}
