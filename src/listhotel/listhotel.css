@@ -103,3 +103,9 @@
 .about-hotel__container {
   max-width: 1200px;
   padding: 40px 24px; }
+
+.google-icons {
+  width: 50px;
+  height: 75px;
+  background: url("../img/location-icon.png") no-repeat center;
+  background-size: cover; }
