@@ -39,13 +39,22 @@ class AboutHotel extends Component {
           {!hotel ? 'нет данных' :
             <div>
               <div className="about-hotel__container">
-                <h2>{hotel.property_name}</h2>
-                <h5>Amenities</h5>
-                {
-                  _.map(hotel.amenities, function (item, key) {
-                    return  <li key={key}>{item.amenity}</li>;
-                  })
-                }
+                <h2 className="main-title">{hotel.property_name}</h2>
+                <div className="hotel-info">
+                  <div className="hotel-info__img">
+                    <img src={_.head(hotel.images).url} alt=""/>
+                  </div>
+                  <div className="hotel-info__content">
+                    <h2 className="title">Amenities</h2>
+                    <ul>
+                      {
+                        _.map(hotel.amenities, function (item, key) {
+                          return  <li key={key}>{item.amenity}</li>;
+                        })
+                      }
+                    </ul>
+                  </div>
+                </div>
               </div>
               <div className="about-hotel__map" style={{ height: '400px', width: '100%' }}>
                 <GoogleMapReact

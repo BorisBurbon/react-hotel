@@ -7,16 +7,16 @@ const API = 'https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=I
 export const getHotel = (data) => dispatch => {
   let city = 'BOM';
   let query = `location=${city}&check_in=2018-05-15&check_out=2018-05-25`;
-  axios.get(`${API}${query}`)
-    .then((response) => {
-      dispatch({
-        type:  GET_HOTEL,
-        payload: response.data.results
-      })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  // axios.get(`${API}${query}`)
+  //   .then((response) => {
+  //     dispatch({
+  //       type:  GET_HOTEL,
+  //       payload: response.data.results
+  //     })
+  //   })
+  //   .catch(err => {
+  //     console.log(err)
+  //   })
 };
 
 export const getSearchHotel = (data) => dispatch => {

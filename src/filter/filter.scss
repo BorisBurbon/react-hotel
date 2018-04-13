@@ -1,8 +1,8 @@
 .filter {
-  height: 450px;
+  height: 500px;
   padding: 80px 24px;
   position: relative;
-  overflow: hidden;
+  //overflow: hidden;
   background: transparent url(../img/filter-bg0.jpg) repeat top left;
   background-size: cover;
   display: flex;
@@ -97,6 +97,7 @@
     left: 0;
     z-index: 0;
     list-style-type: none;
+    overflow: hidden;
     &:after {
       content: '';
       position: absolute;
