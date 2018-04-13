@@ -37,15 +37,17 @@ class AboutHotel extends Component {
           <div className="about-hotel__top">
           </div>
           {!hotel ? 'нет данных' :
-            <div className="about-hotel__container">
-              <h2>{hotel.property_name}</h2>
-              <h5>Amenities</h5>
-              {
-                _.map(hotel.amenities, function (item, key) {
-                  return  <li key={key}>{item.amenity}</li>;
-                })
-              }
-              <div style={{ height: '400px', width: '100%' }}>
+            <div>
+              <div className="about-hotel__container">
+                <h2>{hotel.property_name}</h2>
+                <h5>Amenities</h5>
+                {
+                  _.map(hotel.amenities, function (item, key) {
+                    return  <li key={key}>{item.amenity}</li>;
+                  })
+                }
+              </div>
+              <div className="about-hotel__map" style={{ height: '400px', width: '100%' }}>
                 <GoogleMapReact
                   bootstrapURLKeys={{ key: "AIzaSyBJ2n-pBl_-IRzhGA7MTpIG3udWuY1DM7k" }}
                   center = {{ lat: hotel.location.latitude, lng: hotel.location.longitude }}
