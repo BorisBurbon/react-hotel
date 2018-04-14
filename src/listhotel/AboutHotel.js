@@ -69,6 +69,16 @@ class AboutHotel extends Component {
                     text={''}
                   />
                 </GoogleMapReact>
+                <div className="contact-block">
+                  <h4 className='title'>Address:</h4>
+                  <ul>
+                    <li>City: {hotel.address.city}</li>
+                    <li>Street: {hotel.address.line1}</li>
+                    <li>Region: {hotel.address.region}</li>
+                    <li>Postal code: {hotel.address.postal_code}</li>
+                    <li>Country: {hotel.address.country}</li>
+                  </ul>
+                </div>
               </div>
             </div>
           }
