@@ -17,14 +17,14 @@
       color: #100d0e;
       font-size: 18px; }
     .filter > div .filter-select {
-      min-width: 200px;
+      min-width: 160px;
       font-size: 18px; }
     .filter > div .filter-btn {
       display: inline-block;
       border: none;
       border-radius: 2px;
-      padding: 10px 35px;
-      min-width: 180px;
+      padding: 10px 25px;
+      min-width: 160px;
       background: rgba(0, 0, 0, 0.4);
       color: #fff;
       text-transform: uppercase;
@@ -35,19 +35,26 @@
         cursor: pointer; }
   .filter .date-picker-select {
     background: rgba(0, 0, 0, 0.4);
+    width: 100%;
     padding: 9px 5px;
     border: none;
     margin-top: 34px;
     border-radius: 2px;
     outline: none; }
-  .filter .date-picker-label label {
-    font-size: 16px;
-    top: auto;
-    bottom: 40px;
-    transform: none !important; }
+  .filter .date-picker-label {
+    max-width: 160px; }
+    .filter .date-picker-label label {
+      font-size: 16px;
+      top: auto;
+      bottom: 40px;
+      transform: none !important; }
   .filter .react-datepicker {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.7); }
+    .filter .react-datepicker-wrapper {
+      width: 100%; }
+    .filter .react-datepicker__input-container {
+      width: 160px; }
     .filter .react-datepicker__header {
       background: rgba(0, 0, 0, 0.3);
       border-bottom: 1px solid rgba(0, 0, 0, 0.7); }
