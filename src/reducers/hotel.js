@@ -1,7 +1,7 @@
 import { GET_HOTEL, GET_SEARCH_HOTEL } from '../constants';
 import data from './data.json';
 
-const hotelList = [];
+// const hotelList = [];
 
 export default (state = data, {type, payload}) => {
   switch (type) {
