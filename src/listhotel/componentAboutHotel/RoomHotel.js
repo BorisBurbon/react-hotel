@@ -4,7 +4,6 @@ import  '../listhotel.css'
 
 class RoomHotel extends Component {
   render() {
-    console.log(this.props.data);
     return (
       <div className="about-hotel__container">
         <h3 className="main-title">Room hotel</h3>

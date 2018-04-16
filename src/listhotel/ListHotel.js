@@ -13,8 +13,6 @@ class ListHotel extends Component {
   //}
 
   render() {
-    console.log(this.props.hotel);
-
     const hotelBlock = this.props.hotel.map((data, i) => {
       return (<div key={i} className="hotel__block">
         <Link to={`/about-hotel/${data.property_code}`} className="hotel-content">
@@ -27,8 +25,6 @@ class ListHotel extends Component {
         </Link>
       </div>)
     });
-
-
     return (
       <div className="content">
         {hotelBlock}
