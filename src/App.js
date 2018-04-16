@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Header from './header/header.js';
-import Filter from './filter/filter.js';
+import Header from './header/Header';
+import Filter from './filter/Filter';
 import ListHotel from './listhotel/ListHotel';
 
 

@@ -147,10 +147,17 @@
         padding-left: 40px;
         .title {
           margin-top: 0;
+          &.title-price {
+            color: rgba(142, 47, 47, 1);
+            font-size: 20px;
+          }
         }
         ul {
           list-style-type: none;
           padding-left: 0;
+        }
+        .info-room {
+          display: block;
         }
       }
     }

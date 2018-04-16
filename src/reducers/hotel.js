@@ -3,9 +3,6 @@ import data from './data.json';
 
 const hotelList = [];
 
-
-
-
 export default (state = data, {type, payload}) => {
   switch (type) {
     case GET_HOTEL:

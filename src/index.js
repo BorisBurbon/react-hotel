@@ -14,13 +14,10 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
-// const history = syncHistoryWithStore(browserHistory , store);
-
 
 
 ReactDOM.render(
   <Provider store={store}>
-
       <Router>
         <div>
           <Route exact  path="/" component={App} />

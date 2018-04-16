@@ -126,9 +126,14 @@
       padding-left: 40px; }
       .about-hotel__container .hotel-info__content .title {
         margin-top: 0; }
+        .about-hotel__container .hotel-info__content .title.title-price {
+          color: #8e2f2f;
+          font-size: 20px; }
       .about-hotel__container .hotel-info__content ul {
         list-style-type: none;
         padding-left: 0; }
+      .about-hotel__container .hotel-info__content .info-room {
+        display: block; }
 
 .about-hotel__map {
   position: relative;
