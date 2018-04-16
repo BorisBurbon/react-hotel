@@ -14,7 +14,7 @@ const AboutHotelAmenities = ({ data }) => {
             <h2 className="title">Amenities</h2>
             <ul>
               {
-                _.map(data.amenities, function (item, key) {
+                _.map(data.amenities, (item, key) => {
                   return <li key={key}>{item.amenity}</li>;
                 })
               }
