@@ -1,11 +1,11 @@
 import {connect} from 'react-redux';
 import React, {Component} from 'react';
-import Header from '../header/Header.js';
+import Header from '../../Components/Header/Header';
 import _ from 'lodash'
 
-import MapHotel from './componentAboutHotel/MapHotel'
-import AmenitiesHotel from './componentAboutHotel/AmenitiesHotel'
-import RoomHotel from './componentAboutHotel/RoomHotel'
+import AboutHotelMap from './AboutHotelMap'
+import AboutHotelAmenities from './AboutHotelAmenities'
+import AboutHotelRoom from './AboutHotelRoom'
 
 import  './listhotel.css'
 
@@ -28,9 +28,9 @@ class AboutHotel extends Component {
           </div>
           {!hotel ? 'нет данных' :
             <div>
-              <AmenitiesHotel data={hotel}/>
-              <RoomHotel data={hotel}/>
-              <MapHotel data={hotel}/>
+              <AboutHotelAmenities data={hotel}/>
+              <AboutHotelRoom data={hotel}/>
+              <AboutHotelMap data={hotel}/>
             </div>
           }
         </div>

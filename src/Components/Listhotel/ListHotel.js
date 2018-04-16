@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import  {getHotel}  from '../actions/hotel';
+import  {getHotel}  from '../../Actions/hotel';
 import { Link } from 'react-router-dom';
 import _ from 'lodash'
 

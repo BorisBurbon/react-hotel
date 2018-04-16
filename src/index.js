@@ -7,8 +7,8 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import App from './App';
-import AboutHotel from './listhotel/AboutHotel';
-import reducer from './reducers';
+import AboutHotel from './Components/Listhotel/AboutHotel';
+import reducer from './Reducers';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';

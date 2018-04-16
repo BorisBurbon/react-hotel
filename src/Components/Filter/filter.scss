@@ -3,7 +3,7 @@
   padding: 80px 24px;
   position: relative;
   //overflow: hidden;
-  background: transparent url(../img/filter-bg0.jpg) repeat top left;
+  background: transparent url(../../img/filter-bg0.jpg) repeat top left;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -135,16 +135,16 @@
       }
       &:nth-child(1) {
         span {
-          background-image: url(../img/filter-bg.jpg);
+          background-image: url(../../img/filter-bg.jpg);
           animation-delay: 1s;
         }
       }
       &:nth-child(2) span {
-        background-image: url(../img/filter-bg2.jpg);
+        background-image: url(../../img/filter-bg2.jpg);
         animation-delay: 8s;
       }
       &:nth-child(3) span {
-        background-image: url(../img/filter-bg3.jpg);
+        background-image: url(../../img/filter-bg3.jpg);
         animation-delay: 17s;
       }
     }

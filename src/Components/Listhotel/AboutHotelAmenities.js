@@ -1,21 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import _ from 'lodash'
-import  '../listhotel.css'
+import  './listhotel.css'
 
-class AmenitiesHotel extends Component {
-  render() {
+const AboutHotelAmenities = ({ data }) => {
     return (
       <div className="about-hotel__container">
-        <h2 className="main-title">{this.props.data.property_name}</h2>
+        <h2 className="main-title">{data.property_name}</h2>
         <div className="hotel-info">
           <div className="hotel-info__img">
-            <img src={_.head(this.props.data.images).url} alt=""/>
+            <img src={_.head(data.images).url} alt=""/>
           </div>
           <div className="hotel-info__content">
             <h2 className="title">Amenities</h2>
             <ul>
               {
-                _.map(this.props.data.amenities, function (item, key) {
+                _.map(data.amenities, function (item, key) {
                   return <li key={key}>{item.amenity}</li>;
                 })
               }
@@ -25,8 +24,7 @@ class AmenitiesHotel extends Component {
       </div>
 
     );
-  }
-}
+};
 
 
-export default AmenitiesHotel;
+export default AboutHotelAmenities;

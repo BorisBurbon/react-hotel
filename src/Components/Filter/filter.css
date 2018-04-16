@@ -2,7 +2,7 @@
   height: 500px;
   padding: 80px 24px;
   position: relative;
-  background: transparent url(../img/filter-bg0.jpg) repeat top left;
+  background: transparent url(../../img/filter-bg0.jpg) repeat top left;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -109,13 +109,13 @@
       -webkit-backface-visibility: hidden;
       animation: imageAnimation 26s linear 1; }
     .filter .cb-slideshow li:nth-child(1) span {
-      background-image: url(../img/filter-bg.jpg);
+      background-image: url(../../img/filter-bg.jpg);
       animation-delay: 1s; }
     .filter .cb-slideshow li:nth-child(2) span {
-      background-image: url(../img/filter-bg2.jpg);
+      background-image: url(../../img/filter-bg2.jpg);
       animation-delay: 8s; }
     .filter .cb-slideshow li:nth-child(3) span {
-      background-image: url(../img/filter-bg3.jpg);
+      background-image: url(../../img/filter-bg3.jpg);
       animation-delay: 17s; }
 
 /* Animation for the slideshow images */

@@ -5,7 +5,7 @@ import {InputLabel} from 'material-ui/Input';
 import {MenuItem} from 'material-ui/Menu';
 import {FormControl} from 'material-ui/Form';
 import Button from 'material-ui/Button';
-import  {getSearchHotel}  from '../actions/hotel';
+import  {getSearchHotel}  from '../../Actions/hotel';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 
@@ -14,7 +14,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 class Filter extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = ({
@@ -28,7 +27,6 @@ class Filter extends React.Component {
     this.handleChangeDate = this.handleChangeDate.bind(this);
     this.handleChangeCurrency = this.handleChange.bind(this);
   }
-
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
@@ -49,7 +47,6 @@ class Filter extends React.Component {
     });
   }
 
-
   handleClose = () => {
     this.setState({open: false});
   };
@@ -59,16 +56,13 @@ class Filter extends React.Component {
   };
 
   filterSubmit = () => {
-    console.log('form submited', this.state);
-
     const payload = {
       city: this.state.city,
       checkIn: this.state.checkIn.format('YYYY-MM-DD'),
       checkOut: this.state.checkOut.format('YYYY-MM-DD'),
-        currency: this.state.currency
+      currency: this.state.currency
     };
     this.props.getSearchHotel(payload);
-
   };
 
   render() {

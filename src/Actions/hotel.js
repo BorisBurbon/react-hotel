@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_HOTEL, GET_SEARCH_HOTEL } from '../constants';
+import { GET_HOTEL, GET_SEARCH_HOTEL } from '../Constants';
 
 const API = 'https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?apikey=IPPEfSrgZ8gPIIvDAvvgeAA429ipXkZl&';
 

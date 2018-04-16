@@ -88,7 +88,7 @@
   width: 100%;
   height: 300px;
   position: relative;
-  background: url(../img/about-hotel.jpg) no-repeat center;
+  background: url(../../img/about-hotel.jpg) no-repeat center;
   background-size: cover; }
   .about-hotel__top:after {
     content: '';
@@ -169,5 +169,5 @@
 .google-icons {
   width: 50px;
   height: 75px;
-  background: url("../img/location-icon.png") no-repeat center;
+  background: url("../../img/location-icon.png") no-repeat center;
   background-size: cover; }
