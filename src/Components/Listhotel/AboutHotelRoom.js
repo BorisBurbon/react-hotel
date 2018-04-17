@@ -26,7 +26,7 @@ const AboutHotelRoom = ({data}) => {
             </ul>
           </div>
           <div className="hotel-info__img">
-            <img src={_.head(data.images).url} alt=""/>
+            {/*<img src={_.head(data.images).url} alt=""/>*/}
           </div>
         </div>
       </div>

@@ -6,10 +6,11 @@ import ListHotelBlock from './ListHotelBlock'
 import  './listhotel.css'
 
 class ListHotel extends Component {
-  //componentDidMount() {
-    //this.props.getHotel();
-  //}
+  componentDidMount() {
+    this.props.getHotel();
+  }
   render() {
+    console.log(this.props.hotel);
     return (
       <ListHotelBlock dataHotel={this.props.hotel}/>
     );

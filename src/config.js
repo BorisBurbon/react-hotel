@@ -8,7 +8,7 @@ module.exports = {
     // API URL to be used in the client-side code
     clientUrl: 'https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?' || '',
     //Client Api key
-    clientKey: 'apikey=IPPEfSrgZ8gPIIvDAvvgeAA429ipXkZl&' || '',
+    clientKey: 'apikey=qW31pdJuYnrE9qnoXbA7FmTbc18IYgDG&' || '',
     // API URL to be used in the server-side code
     serverUrl:
     process.env.API_SERVER_URL ||
@@ -17,5 +17,4 @@ module.exports = {
   googleMap: {
     key: 'AIzaSyBJ2n-pBl_-IRzhGA7MTpIG3udWuY1DM7k' || '',
   },
-
 };

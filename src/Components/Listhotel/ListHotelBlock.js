@@ -12,7 +12,7 @@ const ListHotelBlock = ({dataHotel}) => {
         _.map(dataHotel, (data, i) => {
           return (<div key={i} className="hotel__block">
             <Link to={`/about-hotel/${data.property_code}`} className="hotel-content">
-              <img src={_.head(data.images).url} alt=""/>
+              {/*<img src={_.head(data.images).url} alt=""/>*/}
               <h4 className='hotel-content__title'>
                 {data.property_name}
               </h4>

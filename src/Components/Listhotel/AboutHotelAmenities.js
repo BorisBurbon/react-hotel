@@ -8,7 +8,7 @@ const AboutHotelAmenities = ({ data }) => {
         <h2 className="main-title">{data.property_name}</h2>
         <div className="hotel-info">
           <div className="hotel-info__img">
-            <img src={_.head(data.images).url} alt=""/>
+            {/*<img src={_.head(data.images).url} alt=""/>*/}
           </div>
           <div className="hotel-info__content">
             <h2 className="title">Amenities</h2>
