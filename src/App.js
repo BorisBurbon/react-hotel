@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+//import Components
 import Header from './Components/Header/Header';
 import Filter from './Components/Filter/Filter';
 import ListHotel from './Components/Listhotel/ListHotel';

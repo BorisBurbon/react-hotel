@@ -14,5 +14,8 @@ module.exports = {
     process.env.API_SERVER_URL ||
     `http://localhost:${process.env.PORT || 3000}`,
   },
+  googleMap: {
+    key: 'AIzaSyBJ2n-pBl_-IRzhGA7MTpIG3udWuY1DM7k' || '',
+  },
 
 };

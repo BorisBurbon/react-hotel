@@ -1,5 +1,5 @@
 import { GET_HOTEL, GET_SEARCH_HOTEL } from '../Constants';
-import data from './data.json';
+import data from '../Data/data.json';
 
 // const hotelList = [];
 

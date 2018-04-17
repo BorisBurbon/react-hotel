@@ -1,4 +1,5 @@
 import axios from 'axios';
+//Import Config (Api, Api key)
 import config from '../config';
 
 import { GET_HOTEL, GET_SEARCH_HOTEL } from '../Constants';
