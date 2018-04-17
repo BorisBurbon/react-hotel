@@ -12,7 +12,7 @@ const AnyReactComponent = ({text}) => <div className="google-icons">{ text }</di
 const AboutHotelMap = ({ data }) => {
   return (
     <div className="about-hotel__map" style={{height: '400px', width: '100%'}}>
-      <!-- Google Map -->
+      /*Google Map*/
       <GoogleMapReact
         bootstrapURLKeys={{key: config.googleMap.key}}
         center={{lat: data.location.latitude, lng: data.location.longitude}}
@@ -24,7 +24,7 @@ const AboutHotelMap = ({ data }) => {
           text={''}
         />
       </GoogleMapReact>
-      <!-- Hotel Address Block -->
+      /*Hotel Address Block*/
       <div className="contact-block">
         <h4 className='title'>Address:</h4>
         <ul>
