@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route,  Switch} from 'react-router-dom';
 
 import App from './App';
+import ListHotel from './Components/Listhotel/ListHotel';
 import AboutHotel from './Components/Listhotel/AboutHotel';
 import reducer from './Reducers';
 import registerServiceWorker from './registerServiceWorker';
@@ -19,13 +20,17 @@ const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 ReactDOM.render(
   <Provider store={store}>
       <Router>
-        <div>
+        <Switch>
           <Route exact  path="/" component={App} />
           <Route path="/about-hotel/:id" component={AboutHotel} />
-        </div>
+        </Switch>
       </Router>
 
    </Provider>,
   document.getElementById('root')
 );
 registerServiceWorker();
+
+
+
+

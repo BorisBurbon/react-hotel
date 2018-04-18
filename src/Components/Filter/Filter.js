@@ -56,19 +56,19 @@ class Filter extends React.Component {
   };
 
   filterSubmit = () => {
-    const payload = {
+    let payload = {
       city: this.state.city,
       checkIn: this.state.checkIn.format('YYYY-MM-DD'),
       checkOut: this.state.checkOut.format('YYYY-MM-DD'),
       currency: this.state.currency
     };
     this.props.getSearchHotel(payload);
+
   };
 
   render() {
-    const classes = this.props;
     return (
-      <div className={classes.container}>
+      <div className="container">
         <form autoComplete="off" className="filter">
           <ul className="cb-slideshow">
             <li><span>Image 01</span></li>
@@ -131,7 +131,7 @@ class Filter extends React.Component {
               <MenuItem value='UAH'>UAH</MenuItem>
             </Select>
           </FormControl >
-          <FormControl className={classes.formControl}>
+          <FormControl className="formControl">
             <Button variant="raised" className="filter-btn" onClick={this.filterSubmit}>
               Send
             </Button>
@@ -147,8 +147,7 @@ const mapStateToProps = (state) => {
   return {
     hotel: state.hotel
   }
-}
-
+};
 
 const mapDispatchToProps = {
   getSearchHotel

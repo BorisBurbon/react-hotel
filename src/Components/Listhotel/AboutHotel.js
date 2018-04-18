@@ -1,46 +1,33 @@
-import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import Header from '../../Components/Header/Header';
-import _ from 'lodash'
 
 import AboutHotelMap from './AboutHotelMap'
 import AboutHotelAmenities from './AboutHotelAmenities'
 import AboutHotelRoom from './AboutHotelRoom'
-
 import  './listhotel.css'
 
 
 class AboutHotel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      property_name: ''
-    }
-  }
-  
+
   render() {
-    let hotel = _.head(_.filter(this.props.hotelList.hotel, { 'property_code': this.props.match.params.id}));
+    //Parse localStorage in array
+    let returnHotel = JSON.parse(localStorage.getItem("hotel"));
 
       return (
         <div className="about-hotel">
           <Header />
           <div className="about-hotel__top">
           </div>
-          {!hotel ? 'нет данных' :
+          {!returnHotel ? 'нет данных' :
             <div>
-              <AboutHotelAmenities data={hotel}/>
-              <AboutHotelRoom data={hotel}/>
-              <AboutHotelMap data={hotel}/>
+              <AboutHotelAmenities data={returnHotel}/>
+              <AboutHotelRoom data={returnHotel}/>
+              <AboutHotelMap data={returnHotel}/>
             </div>
           }
         </div>
       );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    hotelList: state
-  }
-};
 
-export default connect(mapStateToProps)(AboutHotel);
+export default AboutHotel;

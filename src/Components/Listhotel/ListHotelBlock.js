@@ -4,14 +4,15 @@ import _ from 'lodash'
 
 import  './listhotel.css'
 
-const ListHotelBlock = ({dataHotel}) => {
+
+const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
 
   return (
     <div className="content">
       {
         _.map(dataHotel, (data, i) => {
           return (<div key={i} className="hotel__block">
-            <Link to={`/about-hotel/${data.property_code}`} className="hotel-content">
+            <Link to={`/about-hotel/${data.property_code}`} className="hotel-content" onClick={LinkAboutHotel.bind(this,(data.property_code))}>
               {/*<img src={_.head(data.images).url} alt=""/>*/}
               <h4 className='hotel-content__title'>
                 {data.property_name}
