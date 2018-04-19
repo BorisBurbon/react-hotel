@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react'
 //Import Config (googleMap key)
 import config from '../../config';
@@ -35,6 +36,9 @@ const AboutHotelMap = ({ data }) => {
       </div>
     </div>
   )
+};
+AboutHotelMap.propTypes = {
+  data: PropTypes.object
 };
 
 export default AboutHotelMap;

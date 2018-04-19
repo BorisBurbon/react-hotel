@@ -12,9 +12,9 @@ class ListHotel extends Component {
     super(props);
     // default options Upload Main page
     this.state = {
-      city: 'BOM',
+      city: 'IEV',
       checkIn: moment().add(10, 'days').format('YYYY-MM-DD'),
-      checkOut: moment().add(13, 'days').format('YYYY-MM-DD')
+      checkOut: moment().add(15, 'days').format('YYYY-MM-DD')
     }
   }
   componentDidMount() {
@@ -24,7 +24,6 @@ class ListHotel extends Component {
   //Add Local Storage in in hotel
   // accept data - this id hotel. Filtered array hotels by id and JSON
   LinkAboutHotel = (data) => {
-    console.log(data);
     let hotel = JSON.stringify(_.head(_.filter(this.props.hotel, { 'property_code': data})));
     localStorage.setItem('hotel', hotel);
   };

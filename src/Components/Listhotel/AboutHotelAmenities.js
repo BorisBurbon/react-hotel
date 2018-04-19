@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import _ from 'lodash'
+
 import  './listhotel.css'
 
 const AboutHotelAmenities = ({ data }) => {
@@ -25,6 +27,8 @@ const AboutHotelAmenities = ({ data }) => {
 
     );
 };
-
+AboutHotelAmenities.propTypes = {
+  data: PropTypes.object
+};
 
 export default AboutHotelAmenities;

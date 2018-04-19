@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import _ from 'lodash'
 
@@ -32,6 +33,11 @@ const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
       }
     </div>
   )
+};
+
+ListHotelBlock.propTypes = {
+  dataHotel: PropTypes.array,
+  LinkAboutHotel: PropTypes.func
 };
 
 export default ListHotelBlock;

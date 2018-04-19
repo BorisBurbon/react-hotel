@@ -115,7 +115,6 @@ class Filter extends React.Component {
               <MenuItem value='IEV'>Kiev Airport</MenuItem>
               <MenuItem value='VSG'>Luhansk Airport</MenuItem>
               <MenuItem value='KGO'>Kropyvnytskyi Airport</MenuItem>
-              <MenuItem value='BOM'>Mumbai</MenuItem>
             </Select>
           </FormControl >
           <FormControl className='date-picker-label'>

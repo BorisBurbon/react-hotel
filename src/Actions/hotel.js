@@ -20,7 +20,7 @@ export const getHotel = (data) => dispatch => {
 };
 
 export const getSearchHotel = (data) => dispatch => {
-  let city = data.city || 'BOM';
+  let city = data.city || 'IEV';
   let checkIn = data.checkIn;
   let checkOut = data.checkOut;
   let currency = data.currency || 'USD';
