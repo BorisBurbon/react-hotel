@@ -19,6 +19,8 @@
     .filter > div .filter-select {
       min-width: 160px;
       font-size: 18px; }
+    .filter > div .filter-input {
+      max-width: 160px; }
     .filter > div .filter-btn {
       display: inline-block;
       border: none;

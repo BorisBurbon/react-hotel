@@ -4,10 +4,12 @@ import Select from 'material-ui/Select';
 import {InputLabel} from 'material-ui/Input';
 import {MenuItem} from 'material-ui/Menu';
 import {FormControl} from 'material-ui/Form';
+import Input from 'material-ui/Input';
 import Button from 'material-ui/Button';
-import  {getSearchHotel}  from '../../Actions/hotel';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
+
+import  {getSearchHotel}  from '../../Actions/hotel';
 
 import './filter.css'
 import 'react-datepicker/dist/react-datepicker.css';
@@ -20,57 +22,70 @@ class Filter extends React.Component {
       city: '',
       radius: '',
       currency: '',
+      price: '',
       checkIn: moment(),
       checkOut: moment().add(3, 'days'),
     });
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeCity = this.handleChangeCity.bind(this);
     this.handleChangeDateOut = this.handleChangeDateOut.bind(this);
     this.handleChangeDate = this.handleChangeDate.bind(this);
     this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
+    this.handleChangePrice = this.handleChangePrice.bind(this);
     this.handleChangeRadius = this.handleChangeRadius.bind(this);
   }
 
-  handleChange = event => {
+  //Change select City
+  handleChangeCity = event => {
     this.setState({[event.target.name]: event.target.value});
   };
 
+  //Change select Currency
   handleChangeCurrency = event => {
       this.setState({[event.target.name]: event.target.value});
   };
 
+  //Change select Radius
   handleChangeRadius = event => {
     this.setState({[event.target.name]: event.target.value});
   };
 
+  //Change DatePicker In
   handleChangeDate(date) {
     this.setState({
       checkIn: date
     });
   }
 
+  //Change DatePicker Out
   handleChangeDateOut(date) {
     this.setState({
       checkOut: date
     });
   }
 
+  //Change select Maximum Price in Hotel
+  handleChangePrice = event => {
+    this.setState({price: event.target.value});
+  };
+
   handleClose = () => {
     this.setState({open: false});
   };
-
   handleOpen = () => {
     this.setState({open: true});
   };
 
+  // Submit search Hotel
   filterSubmit = () => {
     let payload = {
       city: this.state.city,
       checkIn: this.state.checkIn.format('YYYY-MM-DD'),
       checkOut: this.state.checkOut.format('YYYY-MM-DD'),
       currency: this.state.currency,
+      price: this.state.price,
       radius: this.state.radius
     };
-    this.props.getSearchHotel(payload);
+   this.props.getSearchHotel(payload);
   };
 
   render() {
@@ -89,7 +104,7 @@ class Filter extends React.Component {
               onClose={this.handleClose}
               onOpen={this.handleOpen}
               value={this.state.city}
-              onChange={this.handleChange}
+              onChange={this.handleChangeCity}
               className="filter-select"
               inputProps={{
                 name: 'city',
@@ -133,10 +148,20 @@ class Filter extends React.Component {
                 id: 'radius-open-select',
               }}
             >
-              <MenuItem value='5'>2</MenuItem>
-              <MenuItem value='10'>5</MenuItem>
-              <MenuItem value='25'>10</MenuItem>
+              <MenuItem value='1'>1</MenuItem>
+              <MenuItem value='2'>2</MenuItem>
+              <MenuItem value='5'>5</MenuItem>
+              <MenuItem value='10'>10</MenuItem>
             </Select>
+          </FormControl >
+          <FormControl className='city-select-block'>
+            <InputLabel htmlFor="controlled-open-select">Max price</InputLabel>
+            <Input
+              type="number"
+              className="filter-input"
+              value={this.state.price}
+              onChange={this.handleChangePrice}
+            />
           </FormControl >
           <FormControl className='city-select-block'>
             <InputLabel htmlFor="controlled-open-select">Currency</InputLabel>

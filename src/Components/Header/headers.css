@@ -20,9 +20,10 @@
     align-items: center; }
     .header__logo .logo {
       animation: App-logo-spin infinite 20s linear;
-      height: 40px;
+      height: 32px;
       width: auto;
       display: inline-block;
+      margin-left: 10px;
       vertical-align: middle; }
 
 @keyframes App-logo-spin {

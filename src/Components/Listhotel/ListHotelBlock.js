@@ -11,6 +11,7 @@ const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
     <div className="content">
       {
         _.map(dataHotel, (data, i) => {
+
           return (<div key={i} className="hotel__block">
             <Link to={`/about-hotel/${data.property_code}`}
                   className="hotel-content"
@@ -23,7 +24,7 @@ const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
               <h4 className='hotel-content__title'>
                 {data.property_name}
               </h4>
-              <p className="hotel-content__text">{data.total_price.amount}$</p>
+              <p className="hotel-content__text">Min price <span>{data.min_daily_rate.amount} $</span></p>
               <p>Go to hotel page</p>
             </Link>
           </div>)

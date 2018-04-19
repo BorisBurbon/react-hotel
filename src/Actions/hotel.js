@@ -25,7 +25,8 @@ export const getSearchHotel = (data) => dispatch => {
   let checkOut = data.checkOut;
   let currency = data.currency || 'USD';
   let radius = data.radius || '10';
-  let query = `location=${city}&check_in=${checkIn}&check_out=${checkOut}&radius=${radius}&currency_code=${currency}`;
+  let price = data.price;
+  let query = `location=${city}&check_in=${checkIn}&check_out=${checkOut}&radius=${radius}&currency_code=${currency}&max_rate=${price}`;
   axios.get(`${config.api.clientUrl}${config.api.clientKey}${query}`)
     .then((response) => {
       dispatch({

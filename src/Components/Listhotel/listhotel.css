@@ -72,14 +72,17 @@
     .hotel__block .hotel-content:hover:before {
       transform: scale3d(2.8, 1.8, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0); }
     .hotel__block .hotel-content__title {
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 20px;
+      font-weight: 300;
       text-transform: uppercase;
       text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.95); }
     .hotel__block .hotel-content__text {
-      font-size: 24px;
-      font-weight: 400;
+      font-size: 18px;
+      font-weight: 300;
       text-transform: uppercase; }
+      .hotel__block .hotel-content__text span {
+        display: inline-block;
+        color: #e8da57; }
     .hotel__block .hotel-content__btn {
       height: 36px;
       border-radius: 2px;
