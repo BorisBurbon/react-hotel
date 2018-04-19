@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import GoogleMapReact from 'google-map-react'
+
 //Import Config (googleMap key)
 import config from '../../config';
 
@@ -10,6 +11,7 @@ import  './listhotel.css'
 // Add icon in Google Map
 const AnyReactComponent = ({text}) => <div className="google-icons">{ text }</div>;
 
+// Map and Contact Hotel
 const AboutHotelMap = ({ data }) => {
   return (
     <div className="about-hotel__map" style={{height: '400px', width: '100%'}}>

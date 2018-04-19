@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
-import Header from '../../Components/Header/Header';
+import React, {Component} from 'react'
 
+import Header from '../../Components/Header/Header'
 import AboutHotelMap from './AboutHotelMap'
 import AboutHotelAmenities from './AboutHotelAmenities'
 import AboutHotelRoom from './AboutHotelRoom'
+
 import  './listhotel.css'
 
 

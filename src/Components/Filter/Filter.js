@@ -26,12 +26,6 @@ class Filter extends React.Component {
       checkIn: moment(),
       checkOut: moment().add(3, 'days'),
     });
-    this.handleChangeCity = this.handleChangeCity.bind(this);
-    this.handleChangeDateOut = this.handleChangeDateOut.bind(this);
-    this.handleChangeDate = this.handleChangeDate.bind(this);
-    this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
-    this.handleChangePrice = this.handleChangePrice.bind(this);
-    this.handleChangeRadius = this.handleChangeRadius.bind(this);
   }
 
   //Change select City
@@ -50,18 +44,18 @@ class Filter extends React.Component {
   };
 
   //Change DatePicker In
-  handleChangeDate(date) {
+  handleChangeDate =(date) => {
     this.setState({
       checkIn: date
     });
-  }
+  };
 
   //Change DatePicker Out
-  handleChangeDateOut(date) {
+  handleChangeDateOut = (date) => {
     this.setState({
       checkOut: date
     });
-  }
+  };
 
   //Change select Maximum Price in Hotel
   handleChangePrice = event => {

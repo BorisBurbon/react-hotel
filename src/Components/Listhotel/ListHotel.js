@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import  {getHotel}  from '../../Actions/hotel';
-import ListHotelBlock from './ListHotelBlock'
 import moment from 'moment';
 import _ from 'lodash'
+
+import  {getHotel}  from '../../Actions/hotel';
+import ListHotelBlock from './ListHotelBlock'
+import ListHotelBlockEmpty from './ListHotelBlockEmpty'
 
 import  './listhotel.css'
 
@@ -30,7 +32,14 @@ class ListHotel extends Component {
 
   render() {
     return (
-      <ListHotelBlock dataHotel={this.props.hotel} LinkAboutHotel={this.LinkAboutHotel} />
+      <div>
+        {
+          this.props.hotel.length?
+            <ListHotelBlock dataHotel={this.props.hotel} LinkAboutHotel={this.LinkAboutHotel} />:
+            // Empty Block - when empty search
+            <ListHotelBlockEmpty />
+        }
+      </div>
     );
   }
 }

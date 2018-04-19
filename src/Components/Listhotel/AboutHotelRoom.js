@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import  './listhotel.css'
 
+//About Hotel room (data - object in LocalSore)
 const AboutHotelRoom = ({data}) => {
     return (
       <div className="about-hotel__container">
@@ -27,7 +28,10 @@ const AboutHotelRoom = ({data}) => {
             </ul>
           </div>
           <div className="hotel-info__img">
-            {/*<img src={_.head(data.images).url} alt=""/>*/}
+            {
+              //check in photo array
+              !data.images.length ? '': <img src={_.head(data.images).url} alt=""/>
+            }
           </div>
         </div>
       </div>

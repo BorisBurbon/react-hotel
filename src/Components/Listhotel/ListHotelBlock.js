@@ -7,12 +7,10 @@ import  './listhotel.css'
 
 
 const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
-
   return (
     <div className="content">
       {
         _.map(dataHotel, (data, i) => {
-
           return (<div key={i} className="hotel__block">
             <Link to={`/about-hotel/${data.property_code}`}
                   className="hotel-content"

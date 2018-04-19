@@ -1,13 +1,12 @@
 import React from 'react';
-import logo from './../../img/earth.png';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import { Link } from 'react-router-dom';
 
+import logo from './../../img/earth.png';
+
 import './headers.css';
-
-
 
 function Header() {
   return (
