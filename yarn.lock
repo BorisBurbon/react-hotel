@@ -6047,6 +6047,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-alert@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-alert/-/react-alert-4.0.2.tgz#f70bcf87e1316502fd96a31b55325d3c4b07ef5c"
+
 react-datepicker@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/react-datepicker/-/react-datepicker-1.4.1.tgz#ee171b71d9853e56f9eece5fc3186402f4648683"

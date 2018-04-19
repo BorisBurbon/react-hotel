@@ -12,8 +12,14 @@ const ListHotelBlock = ({dataHotel, LinkAboutHotel}) => {
       {
         _.map(dataHotel, (data, i) => {
           return (<div key={i} className="hotel__block">
-            <Link to={`/about-hotel/${data.property_code}`} className="hotel-content" onClick={LinkAboutHotel.bind(this,(data.property_code))}>
-              {/*<img src={_.head(data.images).url} alt=""/>*/}
+            <Link to={`/about-hotel/${data.property_code}`}
+                  className="hotel-content"
+                  onClick={LinkAboutHotel.bind(this,(data.property_code))}
+            >
+              {
+                //check in photo array
+                !data.images.length ? '': <img src={_.head(data.images).url} alt=''/>
+              }
               <h4 className='hotel-content__title'>
                 {data.property_name}
               </h4>

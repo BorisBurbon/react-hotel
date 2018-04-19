@@ -18,22 +18,29 @@ class Filter extends React.Component {
     super(props);
     this.state = ({
       city: '',
-        currency: '',
+      radius: '',
+      currency: '',
       checkIn: moment(),
-      checkOut: moment(),
+      checkOut: moment().add(3, 'days'),
     });
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeDateOut = this.handleChangeDateOut.bind(this);
     this.handleChangeDate = this.handleChangeDate.bind(this);
-    this.handleChangeCurrency = this.handleChange.bind(this);
+    this.handleChangeCurrency = this.handleChangeCurrency.bind(this);
+    this.handleChangeRadius = this.handleChangeRadius.bind(this);
   }
 
   handleChange = event => {
     this.setState({[event.target.name]: event.target.value});
   };
-    handleChangeCurrency = event => {
-        this.setState({[event.target.name]: event.target.value});
-    };
+
+  handleChangeCurrency = event => {
+      this.setState({[event.target.name]: event.target.value});
+  };
+
+  handleChangeRadius = event => {
+    this.setState({[event.target.name]: event.target.value});
+  };
 
   handleChangeDate(date) {
     this.setState({
@@ -60,10 +67,10 @@ class Filter extends React.Component {
       city: this.state.city,
       checkIn: this.state.checkIn.format('YYYY-MM-DD'),
       checkOut: this.state.checkOut.format('YYYY-MM-DD'),
-      currency: this.state.currency
+      currency: this.state.currency,
+      radius: this.state.radius
     };
     this.props.getSearchHotel(payload);
-
   };
 
   render() {
@@ -112,6 +119,25 @@ class Filter extends React.Component {
               onChange={this.handleChangeDateOut}
             />
           </FormControl>
+          <FormControl className='city-select-block'>
+            <InputLabel htmlFor="controlled-open-select">Radius</InputLabel>
+            <Select
+              open={this.state.open}
+              onClose={this.handleClose}
+              onOpen={this.handleOpen}
+              value={this.state.radius}
+              onChange={this.handleChangeRadius}
+              className="filter-select"
+              inputProps={{
+                name: 'radius',
+                id: 'radius-open-select',
+              }}
+            >
+              <MenuItem value='5'>2</MenuItem>
+              <MenuItem value='10'>5</MenuItem>
+              <MenuItem value='25'>10</MenuItem>
+            </Select>
+          </FormControl >
           <FormControl className='city-select-block'>
             <InputLabel htmlFor="controlled-open-select">Currency</InputLabel>
             <Select

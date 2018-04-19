@@ -1,9 +1,8 @@
 import { GET_HOTEL, GET_SEARCH_HOTEL } from '../Constants';
-import data from '../Data/data.json';
+//import data from '../Data/data.json';
 
-// const hotelList = [];
 
-export default (state = data, {type, payload}) => {
+export default (state = [], {type, payload}) => {
   switch (type) {
     case GET_HOTEL:
       return Object.assign([], state, payload);
